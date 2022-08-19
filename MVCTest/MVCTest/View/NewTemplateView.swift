@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import SwiftfulLoadingIndicators
 
 struct NewTemplateView: View {
     @StateObject var exerciseViewModel: ExerciseViewModel
@@ -129,14 +130,20 @@ struct NewTemplateView_Previews: PreviewProvider {
 struct ExerciseListContent : View{
     @ObservedObject var exerciseViewModel: ExerciseViewModel
     var index: Int
-    
     var body: some View{
         return HStack(spacing: 10){
             //exerciseViewModel.dtoList[index].exercise.gifURL
             
-            Image("UserImage")
-                .resizable()
-                .frame(width: 75, height: 75, alignment: .leading)
+            let url: String = "https://res.cloudinary.com/hollistichabbits/image/upload/v1659619186/gifs/" + exerciseViewModel.allExercises[index].gifURL + ".png.gif"
+            
+            AsyncImage(url: URL(string: url)) { image in
+                image.resizable()
+            } placeholder: {
+                LoadingIndicator(animation: .fiveLines, color: .red)
+            }
+            .frame(width: 75, height: 75)
+            .clipShape(RoundedRectangle(cornerRadius: 25))
+        
             
             Text(exerciseViewModel.allExercises[index].name)
                 .foregroundColor(Color.black)

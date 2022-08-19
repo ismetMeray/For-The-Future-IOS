@@ -55,7 +55,6 @@ class ExerciseViewModel: ObservableObject{
             i+=1
         }
         
-        print(self.workout?.workoutexercise)
         getExerciseUserData(1)
     }
     
@@ -66,7 +65,6 @@ class ExerciseViewModel: ObservableObject{
             in
             switch result{
             case .success(let data):
-                print(data)
                 DispatchQueue.main.async {
                     for var we in self.workout?.workoutexercise ?? []{
                         if(exerciseId == we.exercise.id){

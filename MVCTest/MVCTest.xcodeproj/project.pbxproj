@@ -39,6 +39,7 @@
 		DBA03B7E27D7CBFA00752AC8 /* Exercise+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA03B7D27D7CBF900752AC8 /* Exercise+Extension.swift */; };
 		DBA03B8127D7CD8C00752AC8 /* LocalStorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA03B8027D7CD8C00752AC8 /* LocalStorageHelper.swift */; };
 		DBA03B8827DD188400752AC8 /* ExerciseSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA03B8727DD188400752AC8 /* ExerciseSelection.swift */; };
+		DBDFF7DB289E7CA400D26983 /* SwiftfulLoadingIndicators in Frameworks */ = {isa = PBXBuildFile; productRef = DBDFF7DA289E7CA400D26983 /* SwiftfulLoadingIndicators */; };
 		DBFBDECC281FE9DC00392027 /* JWTHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFBDECB281FE9DC00392027 /* JWTHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 			files = (
 				DB9D5CE728019A30005C4BB9 /* SDWebImageSwiftUI in Frameworks */,
 				DB23BFB627C636750032E733 /* JWTDecode in Frameworks */,
+				DBDFF7DB289E7CA400D26983 /* SwiftfulLoadingIndicators in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +231,7 @@
 			packageProductDependencies = (
 				DB23BFB527C636750032E733 /* JWTDecode */,
 				DB9D5CE628019A30005C4BB9 /* SDWebImageSwiftUI */,
+				DBDFF7DA289E7CA400D26983 /* SwiftfulLoadingIndicators */,
 			);
 			productName = MVCTest;
 			productReference = DB1AB461279C1C4A007F5245 /* MVCTest.app */;
@@ -261,6 +264,7 @@
 			packageReferences = (
 				DB23BFB427C636750032E733 /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
 				DB9D5CE528019A30005C4BB9 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				DBDFF7D9289E7CA400D26983 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */,
 			);
 			productRefGroup = DB1AB462279C1C4A007F5245 /* Products */;
 			projectDirPath = "";
@@ -543,6 +547,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		DBDFF7D9289E7CA400D26983 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulLoadingIndicators.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -555,6 +567,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB9D5CE528019A30005C4BB9 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		DBDFF7DA289E7CA400D26983 /* SwiftfulLoadingIndicators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBDFF7D9289E7CA400D26983 /* XCRemoteSwiftPackageReference "SwiftfulLoadingIndicators" */;
+			productName = SwiftfulLoadingIndicators;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
