@@ -44,7 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DB1AB461279C1C4A007F5245 /* MVCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1AB461279C1C4A007F5245 /* ForTheFuture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForTheFuture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB1AB464279C1C4A007F5245 /* MVCTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCTestApp.swift; sourceTree = "<group>"; };
 		DB1AB466279C1C4A007F5245 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB1AB468279C1C4B007F5245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		DB1AB462279C1C4A007F5245 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB1AB461279C1C4A007F5245 /* MVCTest.app */,
+				DB1AB461279C1C4A007F5245 /* ForTheFuture.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DB1AB460279C1C4A007F5245 /* MVCTest */ = {
+		DB1AB460279C1C4A007F5245 /* ForTheFuture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB1AB46F279C1C4B007F5245 /* Build configuration list for PBXNativeTarget "MVCTest" */;
+			buildConfigurationList = DB1AB46F279C1C4B007F5245 /* Build configuration list for PBXNativeTarget "ForTheFuture" */;
 			buildPhases = (
 				DB1AB45D279C1C4A007F5245 /* Sources */,
 				DB1AB45E279C1C4A007F5245 /* Frameworks */,
@@ -227,14 +227,14 @@
 			);
 			dependencies = (
 			);
-			name = MVCTest;
+			name = ForTheFuture;
 			packageProductDependencies = (
 				DB23BFB527C636750032E733 /* JWTDecode */,
 				DB9D5CE628019A30005C4BB9 /* SDWebImageSwiftUI */,
 				DBDFF7DA289E7CA400D26983 /* SwiftfulLoadingIndicators */,
 			);
 			productName = MVCTest;
-			productReference = DB1AB461279C1C4A007F5245 /* MVCTest.app */;
+			productReference = DB1AB461279C1C4A007F5245 /* ForTheFuture.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -252,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DB1AB45C279C1C4A007F5245 /* Build configuration list for PBXProject "MVCTest" */;
+			buildConfigurationList = DB1AB45C279C1C4A007F5245 /* Build configuration list for PBXProject "ForTheFuture" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,7 +270,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB1AB460279C1C4A007F5245 /* MVCTest */,
+				DB1AB460279C1C4A007F5245 /* ForTheFuture */,
 			);
 		};
 /* End PBXProject section */
@@ -510,7 +510,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB1AB45C279C1C4A007F5245 /* Build configuration list for PBXProject "MVCTest" */ = {
+		DB1AB45C279C1C4A007F5245 /* Build configuration list for PBXProject "ForTheFuture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB1AB46D279C1C4B007F5245 /* Debug */,
@@ -519,7 +519,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB1AB46F279C1C4B007F5245 /* Build configuration list for PBXNativeTarget "MVCTest" */ = {
+		DB1AB46F279C1C4B007F5245 /* Build configuration list for PBXNativeTarget "ForTheFuture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DB1AB470279C1C4B007F5245 /* Debug */,

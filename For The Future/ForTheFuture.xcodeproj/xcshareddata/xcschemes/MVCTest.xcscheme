@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DB1AB460279C1C4A007F5245"
                BuildableName = "MVCTest.app"
-               BlueprintName = "MVCTest"
-               ReferencedContainer = "container:MVCTest.xcodeproj">
+               BlueprintName = "ForTheFuture"
+               ReferencedContainer = "container:ForTheFuture.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,8 +46,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB1AB460279C1C4A007F5245"
             BuildableName = "MVCTest.app"
-            BlueprintName = "MVCTest"
-            ReferencedContainer = "container:MVCTest.xcodeproj">
+            BlueprintName = "ForTheFuture"
+            ReferencedContainer = "container:ForTheFuture.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -70,8 +70,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DB1AB460279C1C4A007F5245"
             BuildableName = "MVCTest.app"
-            BlueprintName = "MVCTest"
-            ReferencedContainer = "container:MVCTest.xcodeproj">
+            BlueprintName = "ForTheFuture"
+            ReferencedContainer = "container:ForTheFuture.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
