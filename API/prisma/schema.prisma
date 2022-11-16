@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model bodyPart {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique @db.VarChar(255)
+  exercise exercise[]
+}
+
+model muscleTarget {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique @db.VarChar(255)
+  exercise exercise[]
+}
+
+model equipment {
+  id       Int        @id @default(autoincrement())
+  name     String     @unique @db.VarChar(255)
+  exercise exercise[]
+}
+
+model exercise {
+  id              Int               @id @default(autoincrement())
+  name            String            @db.VarChar(255) @unique
+  gifUrl          String            @db.VarChar(255)
+  bodyPartId      Int
+  muscleTargetId  Int
+  equipmentId     Int
+  createdAt       DateTime          @default(now()) @db.DateTime(0)
+  updateAt        DateTime          @default(now()) @db.DateTime(0)
+  workoutexercise workoutexercise[]
+  exercisedata    exerciseData[]
+  bodyPart        bodyPart          @relation(fields: [bodyPartId], references: [id], onDelete: Cascade, map: "exercise_bodypart_fk")
+  muscleTarget    muscleTarget      @relation(fields: [muscleTargetId], references: [id], onDelete: Cascade, map: "exercise_muscleTarget_fk")
+  equipment       equipment         @relation(fields: [equipmentId], references: [id], onDelete: Cascade, map: "exercise_equipment_fk")
+
+
+}
+
+model exerciseData {
+  id              Int             @default(autoincrement())
+  exerciseId      Int
+  workoutId       Int
+  userId          Int
+  repetitions     Int             @default(0)
+  weight          Int             @default(0)
+  createdAt       DateTime        @default(now()) @db.DateTime(0)
+  updateAt        DateTime        @default(now()) @db.DateTime(0)
+  workoutexercise workoutexercise @relation(fields: [workoutId], references: [workoutId], onDelete: NoAction, onUpdate: NoAction, map: "workoutexercisedata")
+  exercise      exercise          @relation(fields: [exerciseId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "workoutexercisedata2")
+  user         user               @relation(fields: [userId], references: [id], onDelete: Cascade, map: "workoutexercisedata3")
+
+  @@id([id, exerciseId, workoutId])
+  @@index([exerciseId, workoutId], map: "workoutexercisedata_idx")
+}
+
+model user {
+  id        Int       @id @default(autoincrement())
+  userName  String    @unique(map: "userName_UNIQUE") @db.VarChar(255)
+  email     String    @unique(map: "email_UNIQUE") @db.VarChar(150)
+  passWord  String    @db.VarChar(255)
+  createdAt DateTime  @default(now()) @db.DateTime(0)
+  updateAt  DateTime  @default(now()) @db.DateTime(0)
+  workout   workout[]
+  exerciseData  exerciseData[]
+}
+
+model workout {
+  id              Int               @id @default(autoincrement())
+  name            String            @db.VarChar(255)
+  userId          Int
+  createdAt       DateTime          @default(now()) @db.DateTime(0)
+  updateAt        DateTime          @default(now()) @db.DateTime(0)
+  user            user              @relation(fields: [userId], references: [id], onDelete: Cascade, map: "workout_ibfk_1")
+  workoutexercise workoutexercise[]
+
+  @@index([userId], map: "userId")
+}
+
+model workoutexercise {
+  exerciseId   Int
+  workoutId    Int
+  createdAt    DateTime       @default(now()) @db.DateTime(0)
+  updateAt     DateTime       @default(now()) @db.DateTime(0)
+  exercise     exercise       @relation(fields: [exerciseId], references: [id], onDelete: Cascade, map: "workoutexercise_ibfk_1")
+  workout      workout        @relation(fields: [workoutId], references: [id], onDelete: Cascade, map: "workoutexercise_ibfk_2")
+  exerciseData exerciseData[]
+  order        Int
+
+  @@id([exerciseId, workoutId])
+  @@index([workoutId], map: "workoutexercise_ibfk_2_idx")
+}
