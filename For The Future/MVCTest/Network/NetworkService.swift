@@ -40,6 +40,22 @@ struct NetworkService {
         request(route: .getExerciseUserData(1, exerciseId) , method: .get, completion: completion)
     }
     
+    func addExercisesToWorkout(_ exercisesToAdd: [WorkoutExercise], _ workoutId: Int, completion: @escaping(Result<Int, AppError>) -> Void){
+
+        let package = createDataPackage(data: exercisesToAdd, packageName: "exercisestoadd")
+        
+        request(route: .addExercisesToWorkout(1, workoutId) , method: .post, parameters: package, completion: completion)
+    }
+    
+    func saveWorkoutRoutine(_ workoutRoutine: Workout, completion: @escaping(Result<Int, AppError>) -> Void){
+        var stringData = String()
+        let encoder = JSONEncoder()
+        let encodedData = try! encoder.encode(workoutRoutine)
+        stringData = String(data: encodedData, encoding: .utf8) ?? ""
+        let package : [String : Any] = ["workout" : stringData]
+        request(route: .saveWorkoutRoutine(1, workoutRoutine.id), method: .post, parameters: package, completion: completion)
+    }
+    
     
     
     private func request<T: Decodable>(route: Route,
@@ -50,6 +66,7 @@ struct NetworkService {
             completion(.failure(AppError.unknownError))
             return
         }
+        
                 
         URLSession.shared.dataTask(with: request) { data, response, error in
             var result: Result<Data, AppError>?
@@ -135,3 +152,13 @@ struct NetworkService {
         return urlRequest
     }
 }
+
+func createDataPackage<T: Codable>(data: T, packageName: String) -> [String: Any]{
+    var stringData = String()
+    let encoder = JSONEncoder()
+    let encodedData = try! encoder.encode(data)
+    stringData = String(data: encodedData, encoding: .utf8) ?? ""
+    let package : [String : Any] = [packageName : stringData]
+    return package
+}
+

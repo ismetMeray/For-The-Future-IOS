@@ -33,7 +33,7 @@ class LoginViewModel : ObservableObject{
                     self.appState.isAuthenticated = true
                 }
             case.failure(let error):
-                self.error = AppError.invalidCredentials
+                self.error = error
             }
         }
     }

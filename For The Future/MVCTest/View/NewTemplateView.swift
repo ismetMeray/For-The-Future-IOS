@@ -13,6 +13,8 @@ struct NewTemplateView: View {
     @StateObject var exerciseViewModel: ExerciseViewModel
     @State private var showPopover = false
     @State private var editWorkoutName = false
+    @Binding var savedWorkout : Bool
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack(alignment: .leading){
@@ -31,7 +33,12 @@ struct NewTemplateView: View {
                 Button(action:{
                     print(exerciseViewModel.workout?.workoutexercise ?? [])
                 }){
-                    Image(systemName: "checkmark")
+                    Button(action:{
+                        self.presentationMode.wrappedValue.dismiss()
+                        self.savedWorkout = true
+                    }){
+                        Image(systemName: "checkmark")
+                    }
                 }
             }
             PopOverButton(title: "Add Exercises", showPopOver: $showPopover, exerciseViewModel: exerciseViewModel)
@@ -71,6 +78,7 @@ struct PopOverButton: View{
                     
                     if(exerciseViewModel.selectedExercises.count > 0){
                         Button(action:{
+//                            exerciseViewModel.addExercisesToWorkout()
                             exerciseViewModel.addExercisesToWorkout()
                             showPopOver = false
                         }){
@@ -118,13 +126,14 @@ struct PopOverButton: View{
     }
 }
 
-struct NewTemplateView_Previews: PreviewProvider {
-    static var previews: some View {
-        let exerciseVM: ExerciseViewModel = ExerciseViewModel()
-        
-        NewTemplateView(exerciseViewModel: exerciseVM).onAppear(perform: exerciseVM.loadInAllExercises)
-    }
-}
+//struct NewTemplateView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let exerciseVM: ExerciseViewModel = ExerciseViewModel()
+//        var savedWorkout = false
+//
+//        NewTemplateView(exerciseViewModel: exerciseVM).onAppear(perform: exerciseVM.loadInAllExercises)
+//    }
+//}
 
 
 struct ExerciseListContent : View{

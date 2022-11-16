@@ -35,7 +35,11 @@ class ExerciseViewModel: ObservableObject{
             switch result{
             case .success(let data):
                 DispatchQueue.main.async {
-                    self.workout = Workout(id: data, name: "workout \(data + 1)", userID: JWTHelper().decodeJWT().body["id"]! as! Int, createdAt: "2020-12-12", updateAt: "2020-12-12", workoutexercise: [])
+                    print(data + 1)
+                    let nrOfWorkouts = data + 1
+                    
+                    self.workout = Workout(id: nrOfWorkouts, name: "workout \(nrOfWorkouts)", userID: JWTHelper().decodeJWT().body["id"]! as! Int, createdAt: "2020-12-12", updateAt: "2020-12-12", workoutexercise: [])
+                    self.saveWorkoutRoutine()
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -46,20 +50,50 @@ class ExerciseViewModel: ObservableObject{
     }
     
     func addExercisesToWorkout(){
-        print(allExercises.count)
-        //        var workoutExercises: [WorkoutExercise] = []
+        var workoutExercises: [WorkoutExercise] = []
         var i = 0
         for index in selectedExercises{
             let exercise = allExercises[index]
-            self.workout?.workoutexercise.append(WorkoutExercise(exercise: exercise, exerciseData: [], order: i))
+            workoutExercises.append(WorkoutExercise(exercise: exercise, exerciseData: [], order: i))
             i+=1
         }
         
-        getExerciseUserData(1)
+        NetworkService.shared.addExercisesToWorkout(workoutExercises, self.workout!.id){
+            (result)
+            in
+            switch result{
+            case .success(let data):
+                DispatchQueue.main.async {
+                    print(data)
+                    self.getExerciseUserData(1)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.error = AppError.serverError(error.localizedDescription)
+                }
+            }
+        }
+        
+    }
+    
+    func saveWorkoutRoutine(){
+        
+        NetworkService.shared.saveWorkoutRoutine(self.workout!){
+            (result)
+            in
+            switch result{
+            case .success(let data):
+                DispatchQueue.main.async {
+                    print(data)
+                }
+            case.failure(let error):
+                print(error)
+                self.error = AppError.serverError(error.localizedDescription)
+            }
+        }
     }
     
     func getExerciseUserData(_ exerciseId: Int){
-        print(exerciseId)
         NetworkService.shared.getExerciseUserData(exerciseId){
             (result)
             in

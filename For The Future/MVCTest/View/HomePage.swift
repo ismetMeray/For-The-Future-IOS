@@ -13,6 +13,7 @@ struct HomePage: View {
     @State var message = "Good luck!"
     @State var c: AlertAction?
     @State var selection: Int? = nil
+    @State private var savedWorkout = false
     private var twoColumnGrid = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
@@ -21,7 +22,7 @@ struct HomePage: View {
                     ZStack(){
                         VStack{
                             HStack{
-                                NewNavigationButton(message: "New Workout Template", destination: NewTemplateView(exerciseViewModel: ExerciseViewModel()))
+                                NewNavigationButton(message: "New Workout Template", destination: NewTemplateView(exerciseViewModel: ExerciseViewModel(), savedWorkout: $savedWorkout))
                                 
                                 NewNavigationButton(message: "new Empty workout", destination: EmptyWorkoutView().body)
                             }
@@ -37,6 +38,8 @@ struct HomePage: View {
                         }
                         if show{
                             AlertView(shown: $show, closureA: $c, message: message).frame(alignment: .top)
+                        }else if savedWorkout{
+                            AlertView(shown: $savedWorkout, closureA: $c, message: "saved workout").frame(alignment: .top)
                         }
                 }
             }.navigationBarTitle("Start A New Workout")

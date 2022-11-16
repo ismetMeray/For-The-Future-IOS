@@ -31,6 +31,8 @@ enum Route {
     case getAllExercises
     case getNrOfWorkouts(Int)
     case getExerciseUserData(Int, Int)
+    case saveWorkoutRoutine(Int, Int)
+    case addExercisesToWorkout(Int, Int)
 }
 
 protocol Moya: Path {
@@ -51,6 +53,8 @@ extension Route : Path {
         case .getAllExercises: return "api/exercise/"
         case .getNrOfWorkouts(let userId): return "api/workout/\(userId)/nrofworkouts"
         case .getExerciseUserData(let userId, let exerciseId): return "api/exercise/\(userId)/user/\(exerciseId)/exercisedata"
+        case .saveWorkoutRoutine(let userId, let workoutId): return "api/workout/\(userId)/user/\(workoutId)/newworkoutroutine"
+        case .addExercisesToWorkout(let userId, let workoutId): return "api/workout/\(userId)/user/\(workoutId)/addexercisetoworkoutroutine"
 
         }
     }
@@ -64,8 +68,10 @@ extension Route : Moya {
         case .login: return "login"
         case .getAllWorkoutOfUser (let userId): return "workouts of \(userId)"
         case .getAllExercises: return "all Exercises"
-        case .getNrOfWorkouts(let userId): return "nr of workouts of user: "
-        case .getExerciseUserData(let userId, let exerciseId): return "data of exercise from user"
+        case .getNrOfWorkouts(_): return "nr of workouts of user: "
+        case .getExerciseUserData(_, _): return "data of exercise from user"
+        case .saveWorkoutRoutine(_,_): return "workout succefully created"
+        case .addExercisesToWorkout(_,_): return "exercises added"
         }
     }
 }

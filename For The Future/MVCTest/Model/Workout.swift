@@ -15,9 +15,9 @@ struct Workout: Codable, Identifiable{
     var createdAt, updateAt: String
     var workoutexercise: [WorkoutExercise]
 
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case userID = "userId"
-        case createdAt, updateAt, workoutexercise
-    }
+        enum CodingKeys: String, CodingKey {
+            case id, name
+            case userID = "userId"
+            case createdAt, updateAt, workoutexercise
+        }
 }

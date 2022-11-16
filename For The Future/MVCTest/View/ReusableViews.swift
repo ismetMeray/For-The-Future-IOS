@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//new toolbar button
 struct NewToolBarItem : ToolbarContent{
     var title = ""
     var callback: () -> ()
@@ -25,6 +26,7 @@ struct NewToolBarItem : ToolbarContent{
     }
 }
 
+//navigation button which acts as a dropdown
 struct NewNavigationButton<Content: View> : View{
     
     var message = ""
@@ -42,7 +44,7 @@ struct NewNavigationButton<Content: View> : View{
                     .cornerRadius(8)
                     .listRowBackground(Color.clear)
                     .ignoresSafeArea()
-            }
+            }.isDetailLink(false)
             Spacer()
         }
     }
@@ -54,6 +56,7 @@ enum AlertAction {
     case others
 }
 
+//simple alertview to use for errors or messages
 struct AlertView: View {
     
     @Binding var shown: Bool
