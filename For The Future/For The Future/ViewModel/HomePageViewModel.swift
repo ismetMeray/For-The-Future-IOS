@@ -39,7 +39,6 @@ class HomePageViewModel: ObservableObject{
                     self.user.workOuts = data
                 }
             case.failure(let error):
-//                self.appState.isAuthenticated = false
                 self.error = AppError.serverError(error.localizedDescription)
             }
         }

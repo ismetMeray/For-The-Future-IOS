@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB1AB465279C1C4A007F5245 /* MVCTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AB464279C1C4A007F5245 /* MVCTestApp.swift */; };
+		DB1AB465279C1C4A007F5245 /* ForTheFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AB464279C1C4A007F5245 /* ForTheFuture.swift */; };
 		DB1AB467279C1C4A007F5245 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1AB466279C1C4A007F5245 /* ContentView.swift */; };
 		DB1AB469279C1C4B007F5245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1AB468279C1C4B007F5245 /* Assets.xcassets */; };
 		DB1AB46C279C1C4B007F5245 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1AB46B279C1C4B007F5245 /* Preview Assets.xcassets */; };
@@ -45,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		DB1AB461279C1C4A007F5245 /* ForTheFuture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForTheFuture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1AB464279C1C4A007F5245 /* MVCTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCTestApp.swift; sourceTree = "<group>"; };
+		DB1AB464279C1C4A007F5245 /* ForTheFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForTheFuture.swift; sourceTree = "<group>"; };
 		DB1AB466279C1C4A007F5245 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB1AB468279C1C4B007F5245 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB1AB46B279C1C4B007F5245 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		DB1AB458279C1C4A007F5245 = {
 			isa = PBXGroup;
 			children = (
-				DB1AB463279C1C4A007F5245 /* MVCTest */,
+				DB1AB463279C1C4A007F5245 /* For The Future */,
 				DB1AB462279C1C4A007F5245 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,7 +109,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB1AB463279C1C4A007F5245 /* MVCTest */ = {
+		DB1AB463279C1C4A007F5245 /* For The Future */ = {
 			isa = PBXGroup;
 			children = (
 				DB9D5CEA28019B6E005C4BB9 /* Info.plist */,
@@ -123,7 +123,7 @@
 				DB1AB468279C1C4B007F5245 /* Assets.xcassets */,
 				DB1AB46A279C1C4B007F5245 /* Preview Content */,
 			);
-			path = MVCTest;
+			path = "For The Future";
 			sourceTree = "<group>";
 		};
 		DB1AB46A279C1C4B007F5245 /* Preview Content */ = {
@@ -163,7 +163,7 @@
 		DB1AB47C279F1E5F007F5245 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DB1AB464279C1C4A007F5245 /* MVCTestApp.swift */,
+				DB1AB464279C1C4A007F5245 /* ForTheFuture.swift */,
 				DB1AB466279C1C4A007F5245 /* ContentView.swift */,
 				DB239B7627A7D9F800EEEE29 /* HomePage.swift */,
 				DBA03B5B27D380E500752AC8 /* EmptyWorkoutView.swift */,
@@ -301,7 +301,7 @@
 				DB23BFA927C5662C0032E733 /* Workout.swift in Sources */,
 				DB23BFB327C62F440032E733 /* Equipment.swift in Sources */,
 				DBA03B8827DD188400752AC8 /* ExerciseSelection.swift in Sources */,
-				DB1AB465279C1C4A007F5245 /* MVCTestApp.swift in Sources */,
+				DB1AB465279C1C4A007F5245 /* ForTheFuture.swift in Sources */,
 				DBA03B7A27D5081F00752AC8 /* ReusableViews.swift in Sources */,
 				DB23BFAF27C62F2C0032E733 /* BodyPart.swift in Sources */,
 				DBA03B5C27D380E500752AC8 /* EmptyWorkoutView.swift in Sources */,

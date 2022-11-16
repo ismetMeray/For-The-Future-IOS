@@ -116,12 +116,6 @@ struct NetworkService {
         }
     }
     
-    /// This function helps us to generate a urlRequest
-    /// - Parameters:
-    ///   - route: the path the the resource in the backend
-    ///   - method: type of request to be made
-    ///   - parameters: whatever extra information you need to pass to the backend
-    /// - Returns: URLRequest
     private func createRequest(route: Route,
                                method: Method,
                                parameters: [String: Any]? = nil) -> URLRequest? {

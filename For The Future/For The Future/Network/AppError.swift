@@ -13,13 +13,13 @@ enum AppError: Error, LocalizedError, Identifiable{
     var errorDescription: String? {
         switch self {
         case .invalidCredentials:
-                return NSLocalizedString("You stupid typ goeie enzo", comment: "awo ja typ beter ofzo maat")
+            return "Login credentials incorrect"
         case .errorDecoding:
             return "Response could not be decoded"
         case .unknownError:
-            return "Bruhhh!!! I have no idea what go on"
+            return "Unknown error, please try again or contact out support team"
         case .invalidUrl:
-            return "HEYYY!!! Give me a valid URL"
+            return "Invalid url given"
         case .serverError(let error):
             return error
         }

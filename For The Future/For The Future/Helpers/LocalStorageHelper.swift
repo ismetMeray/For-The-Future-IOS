@@ -19,21 +19,14 @@ struct LocalStorageHelper{
         let outputURL = docDirectoryURL.appendingPathComponent(fileName)
         
         do {
-            // Encoder, to encode our data.
             let jsonEncoder = JSONEncoder()
-            
-            // Convert our Object into a Data object.
             let jsonCodedData = try jsonEncoder.encode(exercises)
-            
-            // Write the data to output.
             try jsonCodedData.write(to: outputURL)
         } catch {
-            // Error Handling.
             print("Failed to write to file \(error.localizedDescription)")
             return false
         }
         
-        // Some simple status to the user.
         print("Wrote to \(fileName)")
         return true
     }

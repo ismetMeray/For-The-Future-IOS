@@ -36,6 +36,8 @@ exports.getUserExerciseData = async (req, res, next) => {
     })
 }
 
+
+//fast way of uploading the exercises gifs to the cloud using cloudinary API
 exports.uploadimages = (req, res, next) => {
 
     if (typeof (process.env.CLOUDINARY_URL) === 'undefined') {
@@ -77,34 +79,6 @@ exports.uploadimages = (req, res, next) => {
                 })
             })
         })
-
-    // fs.readdir('./gifs').forEach(file => {
-    //     console.log(file)
-
-    //     console.log(newFile)
-    //     let imagePath = fs.readFileSync('./gifs' + file, 'base64')
-    //     const uploadString = 'data:image/jpeg;base64,' + imagePath;
-    //     console.log(uploadString)
-    //     // const uploadImage = async (imagePath) => {
-
-    //     //     // Use the uploaded file's name as the asset's public ID and 
-    //     //     // allow overwriting the asset with new versions
-
-    //     //     // Upload the image
-    //     //     const upload = await cloudinary.uploader.upload(
-    //     //         imagePath,
-    //     //         {
-    //     //             public_id: newFile,
-    //     //             use_filename: true,
-    //     //             folder: 'gifs'
-    //     //         },
-    //     //         function (error, result) {
-    //     //             console.log(result, error)
-    //     //         })
-    //     // };
-
-    //     // uploadImage(uploadString)
-    // });
 
     res.json({
         status: 200,

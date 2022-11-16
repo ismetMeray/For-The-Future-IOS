@@ -29,7 +29,7 @@ class AppState : ObservableObject{
 }
 
 @main
-struct MVCTestApp: App {
+struct ForTheFuture: App {
     @ObservedObject var appState: AppState = AppState()
     
     var body: some Scene {

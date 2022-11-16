@@ -28,7 +28,6 @@ class LoginViewModel : ObservableObject{
             switch result{
             case .success(let data):
                 DispatchQueue.main.async {
-                    print("first")
                     defaults.set(data, forKey: "jsonwebtoken")
                     self.appState.isAuthenticated = true
                 }
